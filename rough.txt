@@ -6,3 +6,25 @@ Tech Stack:
 -Prisma for ORM
 -Postgresql for db
 
+index.js
+/models
+
+/views
+
+/controllers
+
+/routes
+
+
+
+
+
+
+
+
+
+server is a computer running on a port looking 
+for http requests!
+server can be written in many languages,
+javascript ,requires node.js as a runtime env to compile 
+express is  a framework/library for making efficient servers
