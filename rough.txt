@@ -1,0 +1,8 @@
+App to Add, delete, view and update contacts in device.
+
+Tech Stack:
+-Node.js for runtime
+-Express for lightweight web-server
+-Prisma for ORM
+-Postgresql for db
+
