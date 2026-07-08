@@ -8,19 +8,16 @@ Tech Stack:
 
 index.js
 /models
-
 /views
-
 /controllers
 
+
 /routes
-
-
-
-
-
-
-
+1. GET /contacts : list all contacts
+2. GET /contacts/:id get one contact
+3. POST /contacts create a contact
+4. PUT /contacts/:id update one contact
+5. DELETE /contacts/:id Delete a contact
 
 
 server is a computer running on a port looking 
