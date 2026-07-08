@@ -51,4 +51,53 @@ router.post("/", async (req,res)=>{
     }
 });
 
+router.put("/:id", async (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const { name, email, phone, notes } = req.body;
+
+        // check if contact exists first
+        const existing = await prisma.contact.findUnique({
+            where: { id },
+        });
+
+        if (!existing) {
+            return res.status(404).json({ error: "Contact not found" });
+        }
+
+        const updated = await prisma.contact.update({
+            where: { id },
+            data: { name, email, phone, notes },
+        });
+
+        res.json(updated);
+    } 
+    catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Something went wrong" });
+    }
+});
+
+router.delete("/" , async (req,res)=>{
+    try{
+        const id =parseInt(req.params.id);
+        const exists = prisma.contact.findUnique({
+            where: {id},
+        });
+
+        if(!exists) return res.status(404).json({ error: "Contact not found" });
+
+        await prisma.contact.delete({
+            where: {id},
+        });
+
+        res.json({ message: "Contact deleted successfully" });
+
+
+    }
+    catch(error){
+        console.error(error);
+        res.status(500).json({error: "Something went wrong"});
+    }
+});
 module.exports =router;
